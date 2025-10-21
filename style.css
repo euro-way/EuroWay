@@ -1,19 +1,20 @@
-body {
-    background-color: black;
-    color: gold;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-.logo {
-    width: 250px;
-    margin-top: 30px;
-}
-a {
-    color: gold;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:#000;color:#fff}
+.hero{position:relative;height:420px;background-image:url('background.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:space-between;padding:20px;filter:contrast(0.9)}
+.hero::after{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7));}
+.logo{position:relative;z-index:2;width:220px}
+.hero-center{position:relative;z-index:2;max-width:720px;text-align:left;margin-left:20px}
+.hero h1{color:#FFD700;font-size:2.4rem;margin:0 0 10px}
+.lead{color:#fff;opacity:0.95;margin-bottom:14px}
+.btn.contact{background:#FFD700;color:#000;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700}
+.qr{width:120px;position:relative;z-index:2;margin-right:20px;border-radius:8px;background:#fff;padding:8px}
+
+.content{padding:30px 20px}
+.services{max-width:1000px;margin:0 auto}
+.cities p{background:rgba(255,255,255,0.03);padding:12px;border-radius:8px;color:#fff}
+.contact-block{background:#070707;padding:20px;margin-top:20px;border-radius:10px}
+.icons{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.icon{display:inline-flex;align-items:center;gap:8px;background:#111;padding:10px 14px;border-radius:8px;color:#FFD700;text-decoration:none;font-weight:700}
+.site-footer{padding:14px;text-align:center;color:#999;background:#050505;margin-top:20px}
+@media(max-width:720px){.hero{flex-direction:column;align-items:flex-start;height:auto;padding-bottom:30px}.hero-center{text-align:center;margin:12px 0}.qr{margin:10px auto 0}}
