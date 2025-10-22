@@ -3,147 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EuroWay — Пасажирські перевезення</title>
+  <title>EuroWay — Пасажирські перевезення Україна–Європа</title>
   <link rel="icon" href="images/logo.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Перейти до контенту</a>
-
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand">
-        <img src="images/logo.png" alt="EuroWay логотип" class="logo">
-      </div>
-      <nav class="nav" aria-label="Головна навігація">
-        <a href="#main" class="nav-link">Головна</a>
-        <a href="#routes" class="nav-link">Куди їдемо</a>
-        <a href="#cities" class="nav-link">Звідки</a>
-        <a href="#contacts" class="nav-link">Контакти</a>
-      </nav>
-      <div class="top-actions">
-        <a class="phone-btn" href="tel:+380689234960">📞 Телефонувати</a>
-      </div>
-      <button class="menu-toggle" aria-label="Меню">☰</button>
+      <div class="brand"><img src="images/logo.png" alt="EuroWay" class="logo"></div>
+      <div class="slogan">Комфортні пасажирські перевезення Україна – Європа 🇺🇦🇪🇺</div>
+      <nav class="nav"><a href="#routes">Куди їдемо</a><a href="#cities">Звідки</a><a href="#form">Заявка</a><a href="#contacts">Контакти</a></nav>
+      <a class="phone-btn" href="tel:+380689234960">📞 Телефонувати</a>
     </div>
   </header>
-
   <main id="main">
-    <section class="hero" aria-label="Головний банер">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <div class="hero-left">
-          <h1 class="fade-up">Пасажирські перевезення</h1>
-          <p class="lead fade-up delay-1">🇺🇦 Україна – Європа 🇪🇺</p>
-          <p class="sub fade-up delay-2">Щоденні виїзди — веземо за адресою — беремо передачі 📦</p>
-          <div class="hero-ctas fade-up delay-3">
-            <a class="cta phone-cta" href="tel:+380689234960">📞 Телефонувати</a>
-            <a class="cta form-cta" href="#form">📝 Залишити заявку</a>
-          </div>
-        </div>
-        <div class="hero-right fade-up delay-4">
-          <img src="images/logo.png" alt="EuroWay" class="hero-logo">
-        </div>
-      </div>
-    </section>
-
-    <section id="routes" class="section routes">
-      <div class="container">
-        <h2>Куди їдемо</h2>
-        <div class="countries">
-          <span>🇨🇿 Чехія</span>
-          <span>🇩🇪 Німеччина</span>
-          <span>🇧🇪 Бельгія</span>
-          <span>🇳🇱 Нідерланди</span>
-          <span>🇨🇭 Швейцарія</span>
-        </div>
-        <p class="small">Також здійснюємо перевезення по Європі, між країнами ЄС.</p>
-      </div>
-    </section>
-
-    <section id="cities" class="section cities">
-      <div class="container">
-        <h2>З яких міст виїжджаємо</h2>
-        <div class="cities-list">
-          <p>Одеса, Умань, Харків, Полтава, Кременчук, Кропивницький, Дніпро, Кривий Ріг</p>
-          <p>Сарни, Костопіль, Рівне, Дубно, Луцьк, Ковель, Львів</p>
-          <p>Київ, Житомир, Бердичів, Вінниця, Хмельницький, Шепетівка, Славута, Нетішин, Тернопіль, Чернівці</p>
-          <p>Івано-Франківськ, Ужгород, Мукачево</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="form" class="section form-section">
-      <div class="container">
-        <h2>Залишити заявку</h2>
-        <p class="small">Ми передзвонимо або напишемо у Viber</p>
-
-        <form id="leadForm" class="lead-form" onsubmit="return sendToViber(event)">
-          <label>
-            <span class="label-text">Ім’я</span>
-            <input type="text" id="userName" name="name" required placeholder="Ваше ім'я">
-          </label>
-
-          <label>
-            <span class="label-text">Номер телефону</span>
-            <input type="tel" id="userPhone" name="phone" required placeholder="+380XXXXXXXXX">
-          </label>
-
-          <label>
-            <span class="label-text">Куди їдемо</span>
-            <input type="text" id="userTo" name="to" placeholder="Країна/Місто (наприклад: Німеччина)">
-          </label>
-
-          <label>
-            <span class="label-text">Звідки</span>
-            <input type="text" id="userFrom" name="from" placeholder="Місто відправлення (наприклад: Київ)">
-          </label>
-
-          <label>
-            <span class="label-text">Повідомлення</span>
-            <textarea id="userMessage" name="message" rows="4" placeholder="Ваше повідомлення (деталі, дата, місто)"></textarea>
-          </label>
-
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Відправити у Viber</button>
-            <button type="reset" class="btn ghost">Очистити</button>
-          </div>
-        </form>
-
-        <div id="formNotice" class="form-notice" aria-live="polite" style="display:none;"></div>
-      </div>
-    </section>
-
-    <section id="contacts" class="section contacts">
-      <div class="container">
-        <h2>Контакти</h2>
-        <p>Телефон: <a href="tel:+380689234960">+38 (068) 923-4960</a></p>
-
-        <div class="socials">
-          <a class="social" href="https://www.facebook.com/share/16VKqsr8pp/?mibextid=wwXIfr" target="_blank" rel="noopener">
-            <img src="images/icons/facebook.svg" alt="Facebook" class="icon"> <span>Facebook</span>
-          </a>
-
-          <a class="social" href="https://www.tiktok.com/@yuriivolokh" target="_blank" rel="noopener">
-            <img src="images/icons/tiktok.svg" alt="TikTok" class="icon"> <span>TikTok</span>
-          </a>
-
-          <a class="social" href="https://invite.viber.com/?g2=AQBXevxDf8qvr02hycsyOLunLh6dSXHJH8Uc01hOaeafmSe78OVyRIGzq9GeNQBb" target="_blank" rel="noopener">
-            <img src="images/icons/viber.svg" alt="Viber" class="icon"> <span>Viber</span>
-          </a>
-        </div>
-      </div>
-    </section>
+    <section class="hero"><div class="hero-overlay"></div><div class="container hero-inner"><div class="hero-left"><h1 class="fade-up">Пасажирські перевезення</h1><p class="lead fade-up delay-1">🇺🇦 Україна – Європа 🇪🇺</p><p class="sub fade-up delay-2">Щоденні виїзди — веземо за адресою — беремо передачі 📦</p><div class="hero-ctas fade-up delay-3"><a class="cta phone-cta" href="tel:+380689234960">📞 Телефонувати</a><a class="cta form-cta" href="#form">📝 Залишити заявку</a></div></div><div class="hero-right fade-up delay-4"><img src="images/logo.png" alt="EuroWay" class="hero-logo"></div></div></section>
+    <section id="routes" class="section routes"><div class="container"><h2>Куди їдемо</h2><div class="countries"><span>🇨🇿 Чехія</span><span>🇩🇪 Німеччина</span><span>🇧🇪 Бельгія</span><span>🇳🇱 Нідерланди</span><span>🇨🇭 Швейцарія</span></div><p class="small">Також здійснюємо перевезення по Європі, між країнами ЄС.</p></div></section>
+    <section id="cities" class="section cities"><div class="container"><h2>З яких міст виїжджаємо</h2><div class="cities-list"><p>Одеса, Умань, Харків, Полтава, Кременчук, Кропивницький, Дніпро, Кривий Ріг</p><p>Сарни, Костопіль, Рівне, Дубно, Луцьк, Ковель, Львів</p><p>Київ, Житомир, Бердичів, Вінниця, Хмельницький, Шепетівка, Славута, Нетішин, Тернопіль, Чернівці</p><p>Івано-Франківськ, Ужгород, Мукачево</p></div></div></section>
+    <section id="form" class="section form-section"><div class="container"><h2>Залишити заявку</h2><p class="small">Ми передзвонимо або напишемо у Viber</p><form id="leadForm" class="lead-form" onsubmit="return sendToViber(event)"><label><span class="label-text">Ім’я</span><input type="text" id="userName" name="name" required placeholder="Ваше ім'я"></label><label><span class="label-text">Номер телефону</span><input type="tel" id="userPhone" name="phone" required placeholder="+380XXXXXXXXX"></label><label><span class="label-text">Звідки</span><input type="text" id="userFrom" name="from" placeholder="Місто відправлення"></label><label><span class="label-text">Куди</span><input type="text" id="userTo" name="to" placeholder="Країна/Місто"></label><label><span class="label-text">Повідомлення</span><textarea id="userMessage" name="message" rows="4" placeholder="Ваше повідомлення"></textarea></label><div class="form-actions"><button type="submit" class="btn primary">Написати у Viber</button><button type="reset" class="btn ghost">Очистити</button></div></form><div id="formNotice" class="form-notice" aria-live="polite" style="display:none;"></div></div></section>
+    <section id="contacts" class="section contacts"><div class="container"><h2>Контакти</h2><p>Телефон: <a href="tel:+380689234960">+38 (068) 923-4960</a></p><div class="socials"><a class="social" href="https://www.facebook.com/share/16VKqsr8pp/?mibextid=wwXIfr" target="_blank" rel="noopener"><img src="images/icons/facebook.svg" alt="Facebook" class="icon"><span>Facebook</span></a><a class="social" href="https://www.tiktok.com/@yuriivolokh" target="_blank" rel="noopener"><img src="images/icons/tiktok.svg" alt="TikTok" class="icon"><span>TikTok</span></a><a class="social" href="https://invite.viber.com/?g2=AQBXevxDf8qvr02hycsyOLunLh6dSXHJH8Uc01hOaeafmSe78OVyRIGzq9GeNQBb" target="_blank" rel="noopener"><img src="images/icons/viber.svg" alt="Viber" class="icon"><span>Viber</span></a></div></div></section>
   </main>
-
   <button id="topBtn" class="top-btn" title="Повернутися нагору">⬆️</button>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 EuroWay. Усі права захищено.<br>Створено з ❤️ EuroWay</p>
-    </div>
-  </footer>
-
+  <footer class="site-footer"><div class="container"><p>© 2025 EuroWay. Усі права захищено.<br>Створено з ❤️ EuroWay</p></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
