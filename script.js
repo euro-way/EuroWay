@@ -1,10 +1,61 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const fades = document.querySelectorAll('.fade-up');
-  setTimeout(() => fades.forEach(el => el.classList.add('visible')), 120);
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
-  toggle && toggle.addEventListener('click', () => { nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex'; });
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{ a.addEventListener('click', function(e){ const href=this.getAttribute('href'); if(href.startsWith('#')){ e.preventDefault(); const target=document.querySelector(href); if(target) target.scrollIntoView({behavior:'smooth',block:'start'}); } }); });
-  const topBtn = document.getElementById('topBtn'); window.addEventListener('scroll', ()=>{ if(window.scrollY>300) topBtn.style.display='block'; else topBtn.style.display='none'; }); topBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+// script.js
+document.addEventListener('DOMContentLoaded', function(){
+  // Load reviews.json
+  fetch('reviews.json').then(r=>r.json()).then(data=>{
+    const slider = document.getElementById('slider');
+    data.forEach((item, idx)=>{
+      const slide = document.createElement('div');
+      slide.className = 'slide' + (idx===0 ? ' show':'');
+      slide.innerHTML = `<div class="text">“${item.text}”<div class="name">— ${item.name}</div></div>`;
+      slider.appendChild(slide);
+    });
+    initSlider();
+  }).catch(err=>{
+    console.warn('No reviews.json found or failed to load', err);
+  });
+
+  // slider controls
+  function initSlider(){
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    if(slides.length===0) return;
+    let cur = 0;
+    const show = i=>{
+      slides.forEach((s,idx)=>{
+        s.classList.toggle('show', idx===i);
+      });
+    };
+    document.getElementById('prev').addEventListener('click', ()=>{
+      cur = (cur-1+slides.length)%slides.length; show(cur);
+    });
+    document.getElementById('next').addEventListener('click', ()=>{
+      cur = (cur+1)%slides.length; show(cur);
+    });
+    // auto
+    setInterval(()=>{ cur=(cur+1)%slides.length; show(cur); }, 4200);
+
+    // allow swipe on mobile
+    let startX = null;
+    const sliderEl = document.getElementById('slider');
+    sliderEl.addEventListener('touchstart', e=> startX = e.touches[0].clientX);
+    sliderEl.addEventListener('touchend', e=>{
+      if(startX===null) return;
+      let dx = e.changedTouches[0].clientX - startX;
+      if(Math.abs(dx)>40){
+        if(dx<0) cur=(cur+1)%slides.length; else cur=(cur-1+slides.length)%slides.length;
+        show(cur);
+      }
+      startX = null;
+    });
+  }
+
+  // animations on scroll
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
+
 });
-function sendToViber(e){ e.preventDefault(); const name=document.getElementById('userName').value.trim(); const phone=document.getElementById('userPhone').value.trim(); const from=document.getElementById('userFrom').value.trim(); const to=document.getElementById('userTo').value.trim(); const message=document.getElementById('userMessage').value.trim(); const text = encodeURIComponent(`🇺🇦 EuroWay — Пасажирські перевезення\n\n👤 Ім’я: ${name}\n📞 Телефон: ${phone}\n🏁 Звідки: ${from}\n🎯 Куди: ${to}\n💬 Хочу уточнити наявність місць та вартість поїздки.\n\nПовідомлення: ${message}`); const invite = `https://invite.viber.com/?g2=AQBXevxDf8qvr02hycsyOLunLh6dSXHJH8Uc01hOaeafmSe78OVyRIGzq9GeNQBb&text=${text}`; window.open(invite, '_blank'); const notice = document.getElementById('formNotice'); notice.innerText='✅ Заявку відправлено — зв\'яжемось з вами у Viber!'; notice.style.display='block'; document.getElementById('leadForm').reset(); return false; }
