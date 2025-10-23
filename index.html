@@ -1,30 +1,84 @@
 <!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EuroWay — Пасажирські перевезення Україна–Європа</title>
-  <link rel="icon" href="images/logo.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EuroWay – Пасажирські перевезення</title>
+<meta name="description" content="EuroWay — комфортні пасажирські перевезення з України до Європи.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand"><img src="images/logo.png" alt="EuroWay" class="logo"></div>
-      <div class="slogan">Комфортні пасажирські перевезення Україна – Європа 🇺🇦🇪🇺</div>
-      <nav class="nav"><a href="#routes">Куди їдемо</a><a href="#cities">Звідки</a><a href="#form">Заявка</a><a href="#contacts">Контакти</a></nav>
-      <a class="phone-btn" href="tel:+380689234960">📞 Телефонувати</a>
+  <div class="container topbar" aria-hidden="true">
+    <div></div>
+    <div class="contact-mini">
+      <div class="phone-badge">📞</div>
     </div>
-  </header>
-  <main id="main">
-    <section class="hero"><div class="hero-overlay"></div><div class="container hero-inner"><div class="hero-left"><h1 class="fade-up">Пасажирські перевезення</h1><p class="lead fade-up delay-1">🇺🇦 Україна – Європа 🇪🇺</p><p class="sub fade-up delay-2">Щоденні виїзди — веземо за адресою — беремо передачі 📦</p><div class="hero-ctas fade-up delay-3"><a class="cta phone-cta" href="tel:+380689234960">📞 Телефонувати</a><a class="cta form-cta" href="#form">📝 Залишити заявку</a></div></div><div class="hero-right fade-up delay-4"><img src="images/logo.png" alt="EuroWay" class="hero-logo"></div></div></section>
-    <section id="routes" class="section routes"><div class="container"><h2>Куди їдемо</h2><div class="countries"><span>🇨🇿 Чехія</span><span>🇩🇪 Німеччина</span><span>🇧🇪 Бельгія</span><span>🇳🇱 Нідерланди</span><span>🇨🇭 Швейцарія</span></div><p class="small">Також здійснюємо перевезення по Європі, між країнами ЄС.</p></div></section>
-    <section id="cities" class="section cities"><div class="container"><h2>З яких міст виїжджаємо</h2><div class="cities-list"><p>Одеса, Умань, Харків, Полтава, Кременчук, Кропивницький, Дніпро, Кривий Ріг</p><p>Сарни, Костопіль, Рівне, Дубно, Луцьк, Ковель, Львів</p><p>Київ, Житомир, Бердичів, Вінниця, Хмельницький, Шепетівка, Славута, Нетішин, Тернопіль, Чернівці</p><p>Івано-Франківськ, Ужгород, Мукачево</p></div></div></section>
-    <section id="form" class="section form-section"><div class="container"><h2>Залишити заявку</h2><p class="small">Ми передзвонимо або напишемо у Viber</p><form id="leadForm" class="lead-form" onsubmit="return sendToViber(event)"><label><span class="label-text">Ім’я</span><input type="text" id="userName" name="name" required placeholder="Ваше ім'я"></label><label><span class="label-text">Номер телефону</span><input type="tel" id="userPhone" name="phone" required placeholder="+380XXXXXXXXX"></label><label><span class="label-text">Звідки</span><input type="text" id="userFrom" name="from" placeholder="Місто відправлення"></label><label><span class="label-text">Куди</span><input type="text" id="userTo" name="to" placeholder="Країна/Місто"></label><label><span class="label-text">Повідомлення</span><textarea id="userMessage" name="message" rows="4" placeholder="Ваше повідомлення"></textarea></label><div class="form-actions"><button type="submit" class="btn primary">Написати у Viber</button><button type="reset" class="btn ghost">Очистити</button></div></form><div id="formNotice" class="form-notice" aria-live="polite" style="display:none;"></div></div></section>
-    <section id="contacts" class="section contacts"><div class="container"><h2>Контакти</h2><p>Телефон: <a href="tel:+380689234960">+38 (068) 923-4960</a></p><div class="socials"><a class="social" href="https://www.facebook.com/share/16VKqsr8pp/?mibextid=wwXIfr" target="_blank" rel="noopener"><img src="images/icons/facebook.svg" alt="Facebook" class="icon"><span>Facebook</span></a><a class="social" href="https://www.tiktok.com/@yuriivolokh" target="_blank" rel="noopener"><img src="images/icons/tiktok.svg" alt="TikTok" class="icon"><span>TikTok</span></a><a class="social" href="https://invite.viber.com/?g2=AQBXevxDf8qvr02hycsyOLunLh6dSXHJH8Uc01hOaeafmSe78OVyRIGzq9GeNQBb" target="_blank" rel="noopener"><img src="images/icons/viber.svg" alt="Viber" class="icon"><span>Viber</span></a></div></div></section>
+  </div>
+
+  <main class="container">
+    <section class="hero-center">
+      <div class="logo-wrap">
+        <div class="logo-euroway" id="logo">EuroWay</div>
+        <div class="logo-actions">
+          <a class="cta-button" href="viber://chat?number=%2B380689234960" aria-label="Написати у Viber">Написати у Viber</a>
+          <div class="phone-list" aria-label="Телефони">
+            <span>📞</span>
+            <div style="display:flex; flex-direction:column; align-items:flex-start;">
+              <a href="tel:+380689234960" style="text-decoration:none; color:inherit; font-weight:700;">+380689234960</a>
+              <a href="tel:+380961117564" style="text-decoration:none; color:inherit; font-weight:700; margin-top:4px;">+380961117564</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews fade-in" id="reviews">
+      <h2>Відгуки наших клієнтів</h2>
+      <div class="gallery">
+        <div class="card fade-in"><img loading="lazy" src="assets/review_01_thumb.webp" data-full="assets/review_01.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_02_thumb.webp" data-full="assets/review_02.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_03_thumb.webp" data-full="assets/review_03.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_04_thumb.webp" data-full="assets/review_04.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_05_thumb.webp" data-full="assets/review_05.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_06_thumb.webp" data-full="assets/review_06.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_07_thumb.webp" data-full="assets/review_07.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_08_thumb.webp" data-full="assets/review_08.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_09_thumb.webp" data-full="assets/review_09.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_10_thumb.webp" data-full="assets/review_10.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_11_thumb.webp" data-full="assets/review_11.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_12_thumb.webp" data-full="assets/review_12.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_13_thumb.webp" data-full="assets/review_13.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_14_thumb.webp" data-full="assets/review_14.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_15_thumb.webp" data-full="assets/review_15.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_16_thumb.webp" data-full="assets/review_16.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_17_thumb.webp" data-full="assets/review_17.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_18_thumb.webp" data-full="assets/review_18.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_19_thumb.webp" data-full="assets/review_19.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_20_thumb.webp" data-full="assets/review_20.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_21_thumb.webp" data-full="assets/review_21.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_22_thumb.webp" data-full="assets/review_22.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_23_thumb.webp" data-full="assets/review_23.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_24_thumb.webp" data-full="assets/review_24.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_25_thumb.webp" data-full="assets/review_25.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_26_thumb.webp" data-full="assets/review_26.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_27_thumb.webp" data-full="assets/review_27.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_28_thumb.webp" data-full="assets/review_28.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_29_thumb.webp" data-full="assets/review_29.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_30_thumb.webp" data-full="assets/review_30.webp" alt="Відгук клієнта"></div>
+<div class="card fade-in"><img loading="lazy" src="assets/review_31_thumb.webp" data-full="assets/review_31.webp" alt="Відгук клієнта"></div>
+
+      </div>
+    </section>
+
   </main>
-  <button id="topBtn" class="top-btn" title="Повернутися нагору">⬆️</button>
-  <footer class="site-footer"><div class="container"><p>© 2025 EuroWay. Усі права захищено.<br>Створено з ❤️ EuroWay</p></div></footer>
-  <script src="script.js"></script>
+
+  <footer class="container footer">© EuroWay 2025. Усі права захищені</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('show'); }); }, {threshold:0.12});
+  document.querySelectorAll('.fade-in').forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('.gallery img').forEach(function(img){ img.style.cursor = 'pointer'; img.addEventListener('click', function(){ var full = img.getAttribute('data-full'); if(full) window.open(full, '_blank'); }); });
+});
+</script>
 </body>
 </html>
