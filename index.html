@@ -1,1 +1,86 @@
-<html><body><h1>Test</h1></body></html>
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EuroWay — Пасажирські перевезення</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="images/logo.png" alt="EuroWay logo" class="logo"></a>
+    <nav class="nav">
+      <a href="index.html">Головна</a>
+      <a href="directions.html">Напрямки</a>
+      <a href="reviews.html">Відгуки</a>
+      <a href="contacts.html">Контакти</a>
+    </nav>
+    <div class="contact">
+      <div class="tagline">🇺🇦Україна–Європа🇪🇺</div>
+      <a class="phone" href="tel:+380689234960">+38 068 923 4960</a>
+      <div class="owner">Волох Юрій</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <img src="images/bus.jpg" alt="EuroWay bus" class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>EuroWay — Пасажирські перевезення<br><span class="sub">🇺🇦Україна–Європа🇪🇺</span></h1>
+      <p>Комфортні поїздки, безпечні маршрути та уважний сервіс. Забронюйте місце зараз.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="contacts.html">Забронювати</a>
+        <a class="btn ghost" href="tel:+380689234960">Подзвонити</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about container">
+    <h2>Про EuroWay</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>EuroWay — надійні пасажирські перевезення між Україною та країнами Європи. Сучасні мікроавтобуси, комфортні зупинки та досвідчені водії.</p>
+        <ul>
+          <li>Комфортні автобуси</li>
+          <li>Безпечні маршрути</li>
+          <li>Гнучка система бронювання</li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <img src="images/owner.jpg" alt="Волох Юрій">
+        <div class="owner-name">Волох Юрій</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick container">
+    <h2>Популярні напрямки</h2>
+    <div class="cards">
+      <div class="card"><div class="flag">🇵🇱</div><div class="city">Польща</div></div>
+      <div class="card"><div class="flag">🇨🇿</div><div class="city">Чехія</div></div>
+      <div class="card"><div class="flag">🇩🇪</div><div class="city">Німеччина</div></div>
+    </div>
+  </section>
+
+  <section class="reviews-preview container">
+    <h2>Відгуки наших пасажирів</h2>
+    <div class="reviews-row" id="reviews-preview">
+      <!-- injected by script -->
+    </div>
+    <div class="more"><a href="reviews.html" class="btn">Усі відгуки</a></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© EuroWay — Пасажирські перевезення</div>
+    <div>Контакт: <a href="tel:+380689234960">+38 068 923 4960</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
