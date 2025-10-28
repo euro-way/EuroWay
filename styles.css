@@ -1,0 +1,37 @@
+
+:root{
+  --accent:#0a58ca;
+  --dark:#222;
+  --muted:#6b6b6b;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);background:#fff;line-height:1.4}
+.header{background:linear-gradient(180deg, rgba(10,88,202,0.06), rgba(255,255,255,0));padding:18px 12px;border-bottom:1px solid #eee}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px}
+.logo img{width:72px;height:72px;object-fit:contain;border-radius:8px}
+.title{flex:1;text-align:center}
+.title h1{margin:0;font-size:22px}
+.subtitle{margin:0;color:var(--muted)}
+.call .call-btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+.features{max-width:1100px;margin:18px auto;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:0 12px}
+.feature{background:#f6f9ff;border:1px solid #e6f0ff;padding:12px 16px;border-radius:10px;font-weight:600;color:var(--accent)}
+.directions{max-width:1100px;margin:24px auto;text-align:center;padding:0 12px}
+.flags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.leave-application{max-width:900px;margin:26px auto;padding:0 12px}
+.frame{border:1px solid #eee;padding:18px;border-radius:10px;background:#fbfbff}
+.frame form{display:grid;gap:10px}
+.frame input,.frame textarea{padding:10px;border:1px solid #ddd;border-radius:8px;width:100%}
+.frame button{background:var(--accent);color:#fff;padding:10px;border:none;border-radius:8px;font-weight:700}
+.why{max-width:900px;margin:32px auto;padding:0 12px}
+.why ul{columns:2;list-style:none;padding:0;margin:12px 0}
+.reviews,.fleet{max-width:1100px;margin:20px auto;padding:0 12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid #eee}
+.footer{max-width:1100px;margin:24px auto;padding:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.side-social{position:fixed;right:8px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}
+.side-social a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:#fff;border:1px solid #eee;border-radius:10px;text-decoration:none;font-size:18px}
+@media(max-width:700px){
+  .header-inner{flex-direction:column;text-align:center}
+  .title h1{font-size:20px}
+  .why ul{columns:1}
+}

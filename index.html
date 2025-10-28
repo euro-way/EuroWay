@@ -1,73 +1,108 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EuroWay — Пасажирські перевезення</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EuroWay — Пасажирські перевезення Україна-Європа</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">EuroWay</div>
-        <nav>
-            <a href="#home">Головна</a>
-            <a href="#why-us">Чому ми</a>
-            <a href="#reviews">Відгуки</a>
-            <a href="#cars">Наші авто</a>
-            <a href="#contacts">Контакти</a>
-            <a class="call-btn" href="viber://chat?number=%2B380689234960">Замовити дзвінок</a>
-        </nav>
-    </header>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="images/logo.png" alt="EuroWay logo">
+    </div>
+    <div class="title">
+      <h1>Пасажирські перевезення</h1>
+      <p class="subtitle">Україна-Європа</p>
+    </div>
+    <div class="call">
+      <a href="tel:+380961117564" class="call-btn">Замовити дзвінок</a>
+    </div>
+  </div>
+</header>
 
-    <section id="home" class="home-section">
-        <div class="features">
-            <div class="feature">✅ Забираємо та завозимо за адресою</div>
-            <div class="feature">✅ Знижки для дітей</div>
-            <div class="feature">✅ Адресна доставка посилок</div>
-        </div>
-        <a class="main-btn" href="viber://chat?number=%2B380689234960">Залишити заявку</a>
-    </section>
+<nav class="features">
+  <div class="feature">✅ Завозимо та забираємо за адресою</div>
+  <div class="feature">✅ Доставляємо посилки</div>
+  <div class="feature">✅ Для дітей знижки</div>
+</nav>
 
-    <section id="why-us">
-        <h2>Чому обирають нас</h2>
-        <div class="cards">
-            <div class="card">Досвідчені водії</div>
-            <div class="card">Забираємо та завозимо за адресою</div>
-            <div class="card">Індивідуальні трансфери</div>
-            <div class="card">Хороші ціни</div>
-            <div class="card">Знижки для дітей</div>
-        </div>
-    </section>
+<section class="directions">
+  <h2>Наші Напрямки</h2>
+  <div class="flags">
+    <span>Польща 🇵🇱</span>
+    <span>Чехія 🇨🇿</span>
+    <span>Німеччина 🇩🇪</span>
+    <span>Бельгія 🇧🇪</span>
+    <span>Нідерланди 🇳🇱</span>
+    <span>Швейцарія 🇨🇭</span>
+  </div>
+</section>
 
-    <section id="directions">
-        <h2>Наші напрямки</h2>
-        <div class="flags">🇨🇿 🇩🇪 🇧🇪 🇳🇱 🇨🇭</div>
-    </section>
+<section class="leave-application" id="application">
+  <div class="frame">
+    <h3>Залишити заяву</h3>
+    <form onsubmit="event.preventDefault(); alert('Дякуємо! Форма відправлена (локально). Замініть JS щоб зберігати на сервері)');">
+      <input type="text" name="name" placeholder="Ім'я" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <textarea name="note" placeholder="Коротко про поїздку"></textarea>
+      <button type="submit">Відправити</button>
+    </form>
+  </div>
+</section>
 
-    <section id="reviews">
-        <h2>Відгуки наших пасажирів</h2>
-        <div class="reviews-gallery"></div>
-    </section>
+<section class="why">
+  <h2>Чому обирають нас?</h2>
+  <ul>
+    <li>Досвідчені водії</li>
+    <li>Приємні ціни</li>
+    <li>Знижки для дітей</li>
+    <li>Індивідуальні трансфери</li>
+    <li>Комфортні умови</li>
+  </ul>
+</section>
 
-    <section id="cars">
-        <h2>Наші авто і водії</h2>
-        <div class="cars-gallery">
-            <img src="images/авто1.jpg" alt="Авто 1">
-            <img src="images/авто2.jpg" alt="Авто 2">
-        </div>
-    </section>
+<section class="reviews">
+  <h2>Відгуки наших пасажирів</h2>
+  <div class="gallery">
+    <img src="images/review1.jpg" alt="Review 1">
+    <img src="images/review2.jpg" alt="Review 2">
+  </div>
+</section>
 
-    <section id="contacts">
-        <h2>Контакти</h2>
-        <p>📱 Viber: +380689234960</p>
-        <p>📞 WhatsApp: +380961117564</p>
-        <div class="socials">
-            🔹 Viber-група
-            🔹 Telegram
-            🔹 Facebook
-            🔹 TikTok
-        </div>
-    </section>
+<section class="fleet">
+  <h2>Наші авто та водії</h2>
+  <div class="gallery">
+    <img src="images/car1.jpg" alt="Car 1">
+    <img src="images/car2.jpg" alt="Car 2">
+    <img src="images/driver1.jpg" alt="Driver 1">
+    <img src="images/driver2.jpg" alt="Driver 2">
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="contacts">
+    <div>0961117564 — моб</div>
+    <div>0689234960 — Viber</div>
+  </div>
+  <div class="social-inline">
+    <a href="https://invite.viber.com/?g2=AQBXevxDf8qvr02hycsyOLunLh6dSXHJH8Uc01hOaeafmSe78OVyRIGzq9GeNQBb" target="_blank">Viber</a> |
+    <a href="www.tiktok.com/@yuriivolokh" target="_blank">TikTok</a> |
+    <a href="https://www.instagram.com/iuriivolokh4529?igsh=MWY0eTAwMTJjNjZkeg%3D%3D&utm_source=qr" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/share/1FtJhiPLzX/?mibextid=wwXIfr" target="_blank">Facebook</a>
+  </div>
+</footer>
+
+<!-- Fixed side social icons -->
+<div class="side-social">
+  <a href="https://invite.viber.com/?g2=AQBXevxDf8qvr02hycsyOLunLh6dSXHJH8Uc01hOaeafmSe78OVyRIGzq9GeNQBb" aria-label="Viber" target="_blank">📱</a>
+  <a href="https://www.instagram.com/iuriivolokh4529?igsh=MWY0eTAwMTJjNjZkeg%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank">📷</a>
+  <a href="www.tiktok.com/@yuriivolokh" aria-label="TikTok" target="_blank">🎵</a>
+  <a href="https://www.facebook.com/share/1FtJhiPLzX/?mibextid=wwXIfr" aria-label="Facebook" target="_blank">📘</a>
+  <a href="https://wa.me/380689234960" aria-label="WhatsApp" target="_blank">💬</a>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
